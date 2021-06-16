@@ -1,0 +1,35 @@
+{
+  "name": "full-stack-code-test",
+  "version": "1.0.0",
+  "description": "In this test, you are expected to write a small web application to manage a list of Books. Each book has a name, ISBN, and an author. The test consists of two parts, a RESTful API as the **backend** and the Javascript based **frontend** application.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": " nodemon ./app.js",
+    "seeds": "node ./bin/seeds.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdugarciaSB16/full-stack-code-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdugarciaSB16/full-stack-code-test/issues"
+  },
+  "homepage": "https://github.com/EdugarciaSB16/full-stack-code-test#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "http-errors": "^1.8.0",
+    "mongoose": "^5.12.14",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
+}
