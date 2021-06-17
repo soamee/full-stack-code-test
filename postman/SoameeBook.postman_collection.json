@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "3d64f8f4-9409-46e9-a34c-aca85b793d3c",
+		"name": "SoameeBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

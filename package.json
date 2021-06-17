@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./app.js",
     "dev": " nodemon ./app.js",
-    "seeds": "node ./bin/seeds.js",
+    "seeds-author": "node ./bin/seeds_author.js",
+    "seeds-books": "node ./bin/seeds_books",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

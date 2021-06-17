@@ -4,12 +4,22 @@ const cors = require('cors')
 const createError = require('http-errors');
 const logger = require('morgan');
 const express = require('express');
-//require('./config/db.config')
+require('./config/db.config')
 
 const app = express();
 
+app.use(express.json());
 app.use(logger('dev'));
-app.use(cors)
+app.use(cors())
+
+/* Routes */
+const routes = require('./config/routes')
+app.use('/api', routes)
+
+/* Handle Errors*/
+app.use((req, res, next) => {
+    next(createError(404, 'Route not found'));
+});
 
 const port = Number(process.env.PORT || 3001);
 
