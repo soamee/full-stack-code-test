@@ -10,7 +10,165 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": {
+					"raw": "{{BASE_API_URL}}/books",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_API_URL}}/book/60caa416e9c9082224b1ddbc",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"book",
+						"60caa416e9c9082224b1ddbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_API_URL}}/authors",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_API_URL}}/author/60caa1499ba6ae20b2971496",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"author",
+						"60caa1499ba6ae20b2971496"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Eduardo\",\n    \"last_name\": \"García\",\n    \"image\": \"https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/author",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_API_URL}}/book",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"60caa416e9c9082224b1ddbc\",\n    \"name\": \"Pride and Prejudice\",\n    \"isbn\": \"000006\",\n    \"image\": \"https://m.media-amazon.com/images/I/41o3C6-HosL.jpg\",\n    \"author\": \"Jane Austen\",\n    \"id_author\": \"60caa1499ba6ae20b2971493\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/book/60caa416e9c9082224b1ddbc",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"book",
+						"60caa416e9c9082224b1ddbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"60caa1499ba6ae20b2971496\",\n    \"first_name\": \"Jorge\",\n    \"last_name\": \"Borges\",\n    \"image\": \"https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/author/60caa1499ba6ae20b2971496",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"author",
+						"60caa1499ba6ae20b2971496"
+					]
+				}
 			},
 			"response": []
 		}
