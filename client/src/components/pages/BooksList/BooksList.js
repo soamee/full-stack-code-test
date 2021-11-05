@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Container, Row } from "react-bootstrap"
 import BookService from "../../../services/books.service"
+import AddBook from "./AddBook/AddBook"
 import BooksItems from "./BooksItems/BooksItems"
 
 const bookService = new BookService()
@@ -8,6 +9,7 @@ const bookService = new BookService()
 const BooksList = () => {
 
     const [ listOfBooks, setlistOfBooks ] = useState([])
+    const [ addBook, setaddBook ] = useState(undefined)
     
     useEffect(() => {
         console.log("holaaaaaa")
@@ -20,6 +22,7 @@ const BooksList = () => {
    
     return(
         <Container>
+            <AddBook />
             <Row>
                 <BooksItems items={listOfBooks} />
             </Row>
