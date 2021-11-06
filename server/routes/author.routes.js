@@ -38,10 +38,10 @@ router.post('/author', (req, res) => {
 
 
     Author
-        .find({ $and: [{ first_name }, { last_name }] })
+        .findOne({ $and: [{ first_name }, { last_name }] })
         .then(author => {
-
-            if (author?.length >= 1) {
+        
+            if (author?.length == 1) {
                 
                 return author
             }

@@ -7,13 +7,13 @@ const authorSchema = new Schema(
           type: String,
           trim: true,
           set: (value) => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase(),
-          match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+          
         },
         last_name: {
           type: String,
           trim: true,
           set: (value) => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase(),
-          match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+          
         },   
     },
     {
