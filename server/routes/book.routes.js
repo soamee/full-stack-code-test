@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const Book = require("../models/Book.model")
+const Author = require("../models/Author.model")
 const { isBlank } = require("../utils/index")
 
 
@@ -31,17 +32,19 @@ router.get('/book/:id',(req, res) => {
 router.post('/book', (req, res) => {
 
     const { name, isbn, author } = req.body
-
+    console.log("////////////////////",req.body)
     if (isBlank(name) || isBlank(isbn) || isBlank(author)) {
         return (res.status(400).json({ code: 400, message: "Please fill in all the fields." })
         )}
 
+   
+
 
     Book
-        .find({ $or: [{ name }, { isbn }] })
+        .findOne({ $or: [{ name }, { isbn }] })
         .then(allBooksFound => {
-
-            if (allBooksFound?.length >= 1) {
+            console.log("-------------------------",allBooksFound)
+            if (allBooksFound?.length > 1) {
                 return (res.status(400).json({ code: 400, message: 'This book has already been added to the database.' })
                 )}
 

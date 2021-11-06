@@ -30,6 +30,7 @@ router.get('/author/:id',(req, res) => {
 router.post('/author', (req, res) => {
 
     const { first_name, last_name } = req.body
+    console.log(req.body)
 
     if (isBlank(first_name) || isBlank(last_name)) {
         return (res.status(400).json({ code: 400, message: 'Please fill in all the fields' })
@@ -38,15 +39,16 @@ router.post('/author', (req, res) => {
 
     Author
         .find({ $and: [{ first_name }, { last_name }] })
-        .then(allAuthorsFound => {
+        .then(author => {
 
-            if (allAuthorsFound?.length >= 1) {
-                return (res.status(400).json({ code: 400, message: "Author already exist." })
-                )}
+            if (author?.length >= 1) {
+                
+                return author
+            }
 
         return Author.create({ first_name, last_name })
         })
-        .then(authorCreated => res.status(200).json({ authorCreated, message: "This author has been added to the database." }))
+        .then(author => res.status(200).json({ author, message: "This author has been added to the database." }))
         .catch(err => res.status(500).json({ code: 500, message: "Database error while fetching author.", err: err.message }))       
         })
 
