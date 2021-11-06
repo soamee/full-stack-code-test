@@ -8,7 +8,7 @@ const authorService = new AuthorService()
 const bookService = new BookService()
 
 
-const FormAddBook = ({ closeModal }) => {
+const FormAddBook = ({ closeModal, history, onRefreshList }) => {
 
   const [name, setName] = useState("")
   const [isbn, setIsbn] = useState(0)
@@ -54,17 +54,21 @@ const FormAddBook = ({ closeModal }) => {
     authorService
       .createAuthor({ first_name, last_name })
       .then(res => {
-
-        const author = res.data.author[0]._id
-
+        console.log(res)
+        let author
+        Array.isArray(res.data.author) ? author = res?.data?.author[0]._id : author = res?.data?.author._id
+        
         return bookService.createBook({ name, isbn, author })
       })
-      .then(book => alert(`The book ${book.data.bookCreated.name} has been created.`))
+      .then(() =>{
+       
+        alert(`The book has been created.`)
+      })
       .catch(err => alert(err.response.data.message))
 
     clearState()
     closeModal()
-
+    onRefreshList()
   }
 
   return (

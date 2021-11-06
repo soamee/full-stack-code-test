@@ -5,7 +5,7 @@ import { ButtonStyled } from "./UI/AddBook.style"
 import FormAddBook from "./FormAddBook/FormAddBook"
 
 
-const AddBook = () => {
+const AddBook = (props) => {
 
   const [showForm, setShowForm] = useState(false)
 
@@ -37,6 +37,7 @@ const AddBook = () => {
         <Modal.Body>
           <FormAddBook
             closeModal={closeModal}
+            onRefreshList={props.onRefreshList}
           />
         </Modal.Body>
       </Modal>
