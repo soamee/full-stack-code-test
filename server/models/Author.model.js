@@ -6,14 +6,11 @@ const authorSchema = new Schema(
         first_name: {
           type: String,
           trim: true,
-          set: (value) => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase(),
-          
+          set: (value) => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase(),         
         },
         last_name: {
           type: String,
-          trim: true,
-          set: (value) => value.charAt(0).toUpperCase() + value.substring(1).toLowerCase(),
-          
+          trim: true,  
         },   
     },
     {

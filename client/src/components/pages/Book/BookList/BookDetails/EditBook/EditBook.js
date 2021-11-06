@@ -9,8 +9,6 @@ const bookService = new BookService()
 
 const EditBook = ({ item, onShowForm }) => {
 
-  console.log(item)
-
   const [name, setName] = useState(item?.name)
   const [isbn, setIsbn] = useState(item?.isbn)
   const [first_name, setFirst_name] = useState(item?.author.first_name)
@@ -45,14 +43,15 @@ const EditBook = ({ item, onShowForm }) => {
       case "last_name":
         setLast_name(value);
         break;
-      default:
-        break;
-    }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
+        default:
+          break;
+        }
+      }
+      
+      const handleSubmit = (e) => {
+        e.preventDefault()
+        
+        console.log(authorId)
     authorService
       .editAuthor(authorId, { first_name, last_name })
       .then(() => {
